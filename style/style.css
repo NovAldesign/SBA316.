@@ -3,6 +3,11 @@ html, body {
     padding: 0;
     height: 100%;
     box-sizing: border-box;
+    background-color: #03203e;
+    color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 *,
 *::before,
