@@ -34,3 +34,27 @@ html, body {
     margin: 20px 0;
     color: #2bd6e6; /* A soft blue highlight */
 }
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+/* Specific color for 'Start' */
+#start {
+    background-color: #27ae60;
+    color: white;
+}
+
+/* Hover effect */
+button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+.break-mode {
+    background-color: #2e4a3e; /* Shifts to a forest green when resting */
+    transition: background-color 1s ease;
+}
