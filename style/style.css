@@ -34,8 +34,8 @@ html, body {
     margin: 20px 0;
     color: #2bd6e6; /* A soft blue highlight */
 }
-.mode {
-    padding: 10px 20px;
+button {
+    padding: 5px 10px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -43,6 +43,20 @@ html, body {
     transition: transform 0.2s, background-color 0.2s;
 }
 
+/* .timer {
+    display: flex;            
+    justify-content: center;   
+    flex-wrap: wrap;          
+    gap: 15px;                
+    margin: 20px 0;            */
+/* } */
+.timer {
+display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;                     
+    max-width: 300px;              
+    margin: 0 auto;
+}
 /* Specific color for 'Start' */
 #start {
     background-color: #27ae60;
