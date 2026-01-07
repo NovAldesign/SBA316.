@@ -8,34 +8,40 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-*,
-*::before,
-*::after{
-    box-sizing: inherit;
+    font-family: sans-serif;
 }
 
 .main-container {
     text-align: center;
-    background: rgba(252, 252, 252, 0.05); /* Transparent box */
+    background: rgba(252, 252, 252, 0.05);
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     width: 90%;
-    max-width: 1000px;
+    max-width: 500px;
     display: flex;
-    flex-direction: column; /* Stacks items vertically */
-    gap: 20px; /* Adds space between elements */
+    flex-direction: column;
+    gap: 20px;
 }
+
 #display {
     font-size: 5rem;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace; /* Monospaced keeps numbers from jumping */
+    font-family: 'Courier New', monospace;
     margin: 20px 0;
-    color: #2bd6e6; /* A soft blue highlight */
+    color: #2bd6e6;
 }
+
+.timer {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;                     
+    max-width: 300px;              
+    margin: 0 auto;
+}
+
 button {
-    padding: 5px 10px;
+    padding: 10px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -43,32 +49,31 @@ button {
     transition: transform 0.2s, background-color 0.2s;
 }
 
-/* .timer {
-    display: flex;            
-    justify-content: center;   
-    flex-wrap: wrap;          
-    gap: 15px;                
-    margin: 20px 0;            */
-/* } */
-.timer {
-display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 10px;                     
-    max-width: 300px;              
-    margin: 0 auto;
-}
-/* Specific color for 'Start' */
-#start {
-    background-color: #27ae60;
-    color: white;
-}
-
-/* Hover effect */
 button:hover {
     transform: scale(1.05);
-    filter: brightness(1.1);
+    background-color: #f1c40f;
+    color: #000;
 }
+
+#start { background-color: #27ae60; color: white; }
+#pause { background-color: #e67e22; color: white; }
+#reset { background-color: #c0392b; color: white; }
+
 .break-mode {
-    background-color: #2e4a3e; /* Shifts to a forest green when resting */
+    background-color: #2e4a3e;
     transition: background-color 1s ease;
+}
+
+#log {
+    list-style: none;
+    padding: 0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.record {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 8px;
 }

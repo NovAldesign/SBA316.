@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Flow</title>
-    <link rel="stylesheet" href=".//style/style.css" />
-    <script defer src="./script/script.js"></script>
-  </head>
-  <body>
+    <link rel="stylesheet" href="./style/style.css" />
+    <script defer src="script.js"></script>
+</head>
+<body>
     <div class="main-container">
-      <header>
-        <h1>Study Flow</h1>
-        <p id="concentrate">Take the time to focus on your goals.</p>
-      </header>
+        <header>
+            <h1>Study Flow</h1>
+            <p id="concentrate">Take the time to focus on your goals.</p>
+        </header>
 
-      <form id="goal">
-        <label for="study">Study Goal (minutes):</label>
-        <input type="number" id="study" min="1" max="480" required />
-        <button type="submit" id="set">Set Goal</button>
-      </form>
-    <br />
-    <div class="timer">
-      <button class="mode" date-time="15">15 Minutes</button>
-      <button class="mode" date-time="25">25 Minutes</button>
-      <button class="mode" date-time="50">50 Minutes</button>
-      <button class="mode" date-time="60">1 Hour</button>
+        <form id="goal">
+            <label for="user">Name:</label>
+            <input type="text" id="user" placeholder="Your Name" required />
+            
+            <label for="study">Study Goal (minutes):</label>
+            <input type="number" id="study" min="1" max="480" required />
+            
+            <button type="submit" id="set">Set Goal</button>
+        </form>
+
+        <div class="timer">
+            <button class="mode" data-time="1">1 Minute</button>
+            <button class="mode" data-time="25">25 Minutes</button>
+            <button class="mode" data-time="50">50 Minutes</button>
+            <button class="mode" data-time="60">1 Hour</button>
+        </div>
+
+        <div id="display">25:00</div>
+
+        <div class="action">
+            <button id="start">Start</button>
+            <button id="pause">Pause</button>
+            <button id="reset">Reset</button>
+        </div>
+
+        <div id="session">
+            <h3>Study Session History</h3>
+            <ul id="log"></ul>
+        </div>
     </div>
 
-    <div id="display">25:00</div>
-
-    <div class="action">
-    <button id="start">Start</button>
-    <button id="pause">Pause</button>
-    <button id="reset">Reset</button>
-    </div>
-
-    <div id="session">
-        <h3>Study Session History</h3>
-        <ul id="log"></ul>
-    </div>
-    </div>
-  </body>
+    <template id="template">
+        <li class="record">
+            <strong>Success:</strong> <span class="type"></span> completed!
+        </li>
+    </template>
+</body>
 </html>
