@@ -9,7 +9,9 @@ html, body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
+    transition: background-color 1s ease;
 }
+
 
 .main-container {
     text-align: center;

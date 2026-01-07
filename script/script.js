@@ -1,6 +1,5 @@
 let countdown; // This will hold our setInterval
-let secondsLeft;
-let isPaused = true;
+let userName = "User";
 
 
 //caching the main display
@@ -19,6 +18,7 @@ goalForm.addEventListener('submit', (event) => {
     // Stops the page from refreshing
     event.preventDefault();
 
+    const nameInput = document.getElementById('user');
     const goalInput = document.getElementById('study');
     const value = parseInt(goalInput.value);
 
@@ -27,10 +27,12 @@ goalForm.addEventListener('submit', (event) => {
         alert("Please enter a realistic goal between 1 and 480 minutes.");
         goalInput.style.border = "2px solid red"; // Modify style
     } else {
+        userName = nameInput.value; // Store the name
         alert(`Goal set for ${value} minutes!`);
         goalInput.style.border = "none";
 
         const tagline = event.target.parentNode.querySelector('#concentrate');
+        tagline.textContent = `Focus Mode: ${userName}`; // Personalized update
         tagline.style.color = "#f1c40f";
     }
 });
@@ -86,6 +88,10 @@ function displayTimeLeft(seconds) {
 // Requirement 11: Register Event Listeners
 startBtn.addEventListener('click', () => {
     const timeText = display.textContent.split(':');
+    
+    // Personalized Start Alert
+    alert(`Lets get started on your ${timeText[0]} minute goal, ${userName}!`);
+    
     const totalSeconds = (parseInt(timeText[0]) * 60) + parseInt(timeText[1]);
     timer(totalSeconds);
 
@@ -106,14 +112,13 @@ resetBtn.addEventListener('click', () => {
 
 function handleTimerComplete() {
     // 1. Requirement 2: querySelector
-    const template = document.querySelector('#session-template');
+    const template = document.querySelector('#template');
 
     // 2. Requirement 7: Use cloneNode (Requirement 5: createElement is handled by cloneNode internally)
     const clone = template.content.cloneNode(true);
 
     // 3. Requirement 3: Navigate parent-child-sibling
-    // We navigate into the clone to find the span
-    const sessionSpan = clone.querySelector('.session-type');
+    const sessionSpan = clone.querySelector('.type');
     sessionSpan.textContent = "Focus Round";
 
     // 4. Requirement 6: Use appendChild
